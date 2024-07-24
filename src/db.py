@@ -1,7 +1,6 @@
-from database import Database
 from common import Task
 
-class InMemoryDatabase(Database):
+class InMemoryDatabase:
     def __init__(self):
         self._storage: dict[str, Task] = dict()
 

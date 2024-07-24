@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+</head>
+<body>
+    <main>
+        <h3>Todo App Demo</h3>
+        
+        <section class="tasks">
+            <ul>
+                {% for task in tasks %}
+                    <li>
+                        <span> {{ task.name }}</span>
+                        <input type="checkbox" readonly
+                            {% if task.is_completed %}
+                            checked
+                            {% endif %}
+                        />
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
