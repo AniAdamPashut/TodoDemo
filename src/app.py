@@ -15,6 +15,10 @@ def add_task():
     tasks.store(Task(request.form['task_name'], False))
     return redirect('/')
 
+@app.post("/finish/")
+def finish_task():
+    tasks.load(request.form['task_name']).is_completed = True
+    return redirect('/')
 
 
 PORT = os.environ["PORT"]

@@ -21,12 +21,15 @@
             <ul>
                 {% for task in tasks %}
                     <li>
-                        <span> {{ task.name }}</span>
-                        <input type="checkbox" readonly
-                            {% if task.is_completed %}
-                            checked
-                            {% endif %}
-                        />
+                        <form action="/finish" method="post">
+                            <input type="text" name="task_name" value="{{ task.name }}" readonly />
+                            <input type="checkbox" name="is_task_completed"
+                                {% if task.is_completed %}
+                                checked
+                                {% endif %}
+                            disabled />
+                            <input type="submit" value="Finish">
+                        </form>
                     </li>
                 {% endfor %}
             </ul>
