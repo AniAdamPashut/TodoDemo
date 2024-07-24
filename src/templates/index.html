@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo App</title>
+
+    <link rel="stylesheet" href="static/index.css">
 </head>
 <body>
+    <header>
+        <h1>Todo App Demo</h1>
+    </header>
     <main>
-        <h3>Todo App Demo</h3>
-        
         <section class="submission">
-            <form action="/tasks/" method="post">
+            <h3>Create a New Task</h3>
+            <form class="submi" action="/tasks/" method="post">
                 <input type="text" name="task_name" required>
                 <input type="submit">
             </form>
@@ -18,10 +22,9 @@
 
 
         <section class="tasks">
-            <ul>
                 {% for task in tasks %}
-                    <li>
-                        <form action="/finish" method="post">
+                    <div>
+                        <form class="task" action="/finish" method="post">
                             <input type="text" name="task_name" value="{{ task.name }}" readonly />
                             <input type="checkbox" name="is_task_completed"
                                 {% if task.is_completed %}
@@ -30,9 +33,8 @@
                             disabled />
                             <input type="submit" value="Finish">
                         </form>
-                    </li>
+                    </div>
                 {% endfor %}
-            </ul>
         </section>
     </main>
 </body>
