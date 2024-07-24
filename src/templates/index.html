@@ -14,7 +14,7 @@
     <main>
         <section class="submission">
             <h3>Create a New Task</h3>
-            <form class="submi" action="/tasks/" method="post">
+            <form class="submission-form" action="/tasks/" method="post">
                 <input type="text" name="task_name" required>
                 <input type="submit">
             </form>
@@ -23,8 +23,8 @@
 
         <section class="tasks">
                 {% for task in tasks %}
-                    <div>
-                        <form class="task" action="/finish" method="post">
+                    <div class="task">
+                        <form action="/finish" method="post">
                             <input type="text" name="task_name" value="{{ task.name }}" readonly />
                             <input type="checkbox" name="is_task_completed"
                                 {% if task.is_completed %}

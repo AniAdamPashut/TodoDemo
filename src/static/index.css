@@ -11,6 +11,7 @@
 
 body {
     background-color: var(--light-pink);
+    font-size: 2rem;
 }
 
 header {
@@ -18,30 +19,60 @@ header {
     justify-content: center;
     align-items: center;
 
-    height: 10vh;
+    height: 20vh;
 }
 
 main {
     display: flex;
 
-    flex-direction: column;
     justify-content: space-around;
     align-items: center;
 
-    height: 90vh;
+    height: 80vh;
 }
 
 .tasks {
     display: flex;
-    flex-direction: column;
+    flex-flow: wrap column;
+
+    height: 100%;
 }
 
 .task {
     background-color: var(--normal-pink);
-    border: 0.5em solid var(--white);
-    box-shadow: 0.5em 0.5em var(--black);
+    border: 0.25em solid var(--white);
+    box-shadow: 0.25em 0.25em var(--black);
 
-    border-radius: 0.5em;
+    border-radius: 0.25em;
     padding: 0.5em;
+    margin: 0.5em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: fit-content;
+}
+
+.submission-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.submission-form * {
     margin: 1em;
 }
+
+
+input {
+    background: none;
+    transition: cubic-bezier(0.895, 0.03, 0.685, 0.22) 0.5s;    
+    padding: 0.5em;
+    font-size: 1rem;
+}
+
+input:focus {
+    transition: cubic-bezier(0.895, 0.03, 0.685, 0.22) 0.5s;    
+    background-color: var(--highlight-pink);
+}
+
