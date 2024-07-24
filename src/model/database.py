@@ -1,5 +1,11 @@
-class Database:
-    def __init__(self):
-        pass
+import common
 
+class Database:
+    def store(self, task: common.Task):
+        raise NotImplementedError
     
+    def load(self, name: str):
+        raise NotImplementedError
+
+    def delete(self, name: str):
+        raise NotImplementedError
