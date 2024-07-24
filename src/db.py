@@ -1,4 +1,4 @@
-from common import Task
+from common.task import Task
 
 class InMemoryDatabase:
     def __init__(self):
@@ -12,3 +12,6 @@ class InMemoryDatabase:
 
     def delete(self, name: str):
         self._storage.pop(name)
+
+    def load_all(self):
+        return self._storage.values()

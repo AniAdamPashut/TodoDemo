@@ -9,6 +9,14 @@
     <main>
         <h3>Todo App Demo</h3>
         
+        <section class="submission">
+            <form action="/tasks/" method="post">
+                <input type="text" name="task_name" required>
+                <input type="submit">
+            </form>
+        </section>
+
+
         <section class="tasks">
             <ul>
                 {% for task in tasks %}
